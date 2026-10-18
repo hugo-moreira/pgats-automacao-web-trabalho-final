@@ -1,5 +1,7 @@
 # PGATS3 - Trabalho Final - Automação de Testes na Camada de Interface (Web)
 
+[![Testes E2E - Automation Exercise](https://github.com/hugo-moreira/pgats-automacao-web-trabalho-final/actions/workflows/cypress.yml/badge.svg)](https://github.com/hugo-moreira/pgats-automacao-web-trabalho-final/actions/workflows/cypress.yml)
+
 
 Projeto individual de conclusão da disciplina **Automação de Testes na Camada de Interface (Web)** (PGATS3), professor Samuel Lucas.
 Automatiza, com **Cypress**, os casos de teste **1, 2, 3, 4, 5, 8, 9, 10, 15 e 16** da página
