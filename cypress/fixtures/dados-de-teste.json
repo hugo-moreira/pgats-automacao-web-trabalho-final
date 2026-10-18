@@ -1,0 +1,12 @@
+{
+  "credenciaisInvalidas": {
+    "email": "usuario.inexistente.pgats@mail.com",
+    "senha": "senha-incorreta-123"
+  },
+  "busca": {
+    "termo": "Dress"
+  },
+  "pedido": {
+    "comentario": "Pedido gerado por teste automatizado - PGATS3 Trabalho Final 2026"
+  }
+}

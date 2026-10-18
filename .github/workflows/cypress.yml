@@ -1,0 +1,67 @@
+name: Testes E2E - Automation Exercise
+
+on:
+  # Execucao manual pela aba "Actions" (Run workflow)
+  workflow_dispatch:
+  # Execucao automatica a cada push/PR na branch principal
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  testes-e2e:
+    name: Executar testes Cypress (headless)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Clonar o repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Conferir versoes de Node e npm
+        run: |
+          node --version
+          npm --version
+
+      - name: Instalar dependencias do projeto
+        run: npm ci
+
+      - name: Garantir o binario do Cypress instalado
+        run: npx cypress install && npx cypress verify
+
+      - name: Executar testes Cypress
+        run: npx cypress run --browser electron
+
+      - name: Publicar relatorio HTML (mochawesome)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-mochawesome
+          path: cypress/reports
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Publicar screenshots de falhas
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots-falhas
+          path: cypress/screenshots
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Publicar videos da execucao
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-execucao
+          path: cypress/videos
+          if-no-files-found: ignore
+          retention-days: 30

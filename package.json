@@ -1,0 +1,31 @@
+{
+  "name": "pgats-automacao-web-trabalho-final",
+  "version": "1.0.0",
+  "description": "Trabalho de conclusao - PGATS3 Automacao de Testes na Camada de Interface (Web). Casos de teste 1, 2, 3, 4, 5, 8, 9, 10, 15 e 16 do automationexercise.com com Cypress.",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "cypress run",
+    "test:chrome": "cypress run --browser chrome",
+    "test:cadastro-login": "cypress run --spec cypress/e2e/cadastro-e-login.cy.js",
+    "test:produtos": "cypress run --spec cypress/e2e/produtos-e-busca.cy.js",
+    "test:assinatura": "cypress run --spec cypress/e2e/assinatura.cy.js",
+    "test:pedidos": "cypress run --spec cypress/e2e/pedidos.cy.js",
+    "relatorio": "xdg-open cypress/reports/index.html"
+  },
+  "keywords": [
+    "cypress",
+    "pgats",
+    "automacao-web",
+    "automation-exercise"
+  ],
+  "author": "Hugo Moreira",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
+    "cypress": "13.7.3",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}

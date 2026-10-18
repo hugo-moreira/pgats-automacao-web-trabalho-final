@@ -1,0 +1,18 @@
+# Dependencias
+node_modules/
+
+# Evidencias e relatorios gerados pela execucao
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/reports/
+
+# Variaveis de ambiente / segredos
+.env
+cypress.env.json
+
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
